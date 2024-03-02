@@ -1,4 +1,3 @@
-# 1-Day 1-Commit
+# 365 commit
 
 
-study tailwindcss
