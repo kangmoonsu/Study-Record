@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<form class="contact-form">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="form-group">
+                <input class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요*" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="form-group">
+                <textarea class="form-control form-content" id="content" name="content" placeholder="문의내용을 입력해주세요. *"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="align-items: center;">
+        <div class="col-1">
+            <input type="checkbox" class="form-control form-checkbox" id="privacy">
+        </div>
+        <div class="col-11 px-1 privacy-agree-text">
+            <span style="font-size: 15px;">개인정보 수집 및 이용 동의(필수) <a class="privacy-info"  data-bs-toggle="modal" data-bs-target="#privacy-modal" href="#">자세히</a></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="g-recaptcha"></div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button type="submit" name="submit" id="submit-btn" class="disabled-btn mt-0" value="문의하기" disabled>문의하기 <i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+</form>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+<script>
+
+    let onloadCallback = function () {
+        grecaptcha.render('g-recaptcha', {
+            'sitekey': '사이트 키',
+            'callback': verifyCallback,
+            'expired-callback': expiredCallback,
+        });
+    };
+
+    let verifyCallback = function (response) {
+        $("#submit-btn").removeClass("disabled-btn");
+        $("#submit-btn").attr("disabled", false);
+    };
+
+    let expiredCallback = function (response) {
+        $("#submit-btn").addClass("disabled-btn");
+        $("#submit-btn").attr("disabled", true);
+    }
+
+    let resetForm = function () {
+        $("#email").val('');
+        $("#content").val('');
+        $("#privacy").prop("checked", false);
+        $("#submit-btn").addClass("disabled-btn").attr("disabled", true);
+        grecaptcha.reset();
+    }
+
+    window.onload = function () {
+        onloadCallback();
+    };
+</script>
+</body>
+</html>
