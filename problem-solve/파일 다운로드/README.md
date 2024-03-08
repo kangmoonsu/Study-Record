@@ -19,7 +19,9 @@
 
 + 스프링 부트 프로젝트 내부에 있 경로에 brochure 디렉터리를 만들어서 안에 파일을 넣어주고
 
-![1](./img/1.0.png)
+<div align="center">
+  <img src="./img/1.0.png">
+</div>
 
 + WebConfig에서도 파일 경로 설정을 미리 해주고
 
@@ -77,7 +79,7 @@ The value is only accessible if the object's 'responseType' is '' or 'text' (was
 
 + 'responseText' 대신 'response' 속성을 사용하여 응답 데이터에 접근해야 합니다.
 
-+ 사용했던 jQuery 버전이 1.12버전대라서 발생한 에러로 어쩔 수 없이 바닐라 JS로 요청하게 되었다.
++ 디자인 템플릿에서 사용했던 jQuery 버전이 1.12버전대라서 발생한 에러로 어쩔 수 없이 바닐라 JS로 요청하게 되었다.
 
 ```java
 @RestController
@@ -117,8 +119,12 @@ public class FileController {
 + 위에 코드를 다 작성하고 나면 이제 ec2에 배포하고 나서 jar파일을 배포한 같은 경로에도 동일하게
 + brochure 디렉터리를 만들어서 소개서 pdf파일을 넣어주어야한다.
 
-![2](./img/2.0.png)
-
-![3](./img/3.0.png)
+<div align="center">
+  <img src="./img/2.0.png">
+</div>
+<br>
+<div align="center">
+  <img src="./img/3.0.png">
+</div>
 
 + 해당 경로에 미리 안넣어두고 배포하니 계속 500번 에러가 뜨고 WebConfig에도 파일 경로 지정을 제대로 안해놔서 시간이 오래 걸렸었다.
