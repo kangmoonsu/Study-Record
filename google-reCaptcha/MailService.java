@@ -26,10 +26,10 @@ public class MailService {
             } else {
                 MimeMessage mimeMessage = emailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-                helper.setFrom("phishingshield.co.kr"); // 발신자 이메일 고정
-                helper.setTo("moonsu@marvelsystem.co.kr"); // 수신자 이메일
+                helper.setFrom("example@example.com"); // 발신자 이메일 고정
+                helper.setTo("example@example.com"); // 수신자 이메일
                 helper.setSubject("피싱쉴드 문의 도착"); // 이메일 제목
-                String emailContent = "발신인: " + dto.getEmail() + "\n문의 내용: " + dto.getContent(); // 이메일 본문
+                String emailContent = "문의 내용: " + dto.getContent(); // 이메일 본문
                 helper.setText(emailContent);
                 emailSender.send(mimeMessage);
                 return true;

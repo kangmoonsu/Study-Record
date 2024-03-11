@@ -219,8 +219,8 @@ public class MailService {
             } else {
                 MimeMessage mimeMessage = emailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-                helper.setFrom(""); // 발신자 이메일
-                helper.setTo(""); // 수신자 이메일
+                helper.setFrom("example@example.com"); // 발신자 이메일
+                helper.setTo("example@example.com"); // 수신자 이메일
                 helper.setSubject("이메일 도착!"); // 이메일 제목
                 String emailContent = "문의 내용: " + dto.getContent(); // 문의 내용
                 helper.setText(emailContent);
