@@ -1,5 +1,6 @@
 package kr.co.moon.restfulservice.controller;
 
+import jakarta.validation.Valid;
 import kr.co.moon.restfulservice.bean.User;
 import kr.co.moon.restfulservice.dao.UserDaoService;
 import kr.co.moon.restfulservice.exception.UserNotFoundException;
@@ -39,7 +40,7 @@ public class UserController {
     // input - detail of user
     // output - CREATED & Return the created URI
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
