@@ -17,3 +17,23 @@
 
 
 ### Section 3
+
+
+# 정리해야할 내용들
+soap || rest api
+
+open api
+
+controller와 rest controller의 차이
+
+@AllArgsConstructor vs @NoArgsConstructor
+
+@Cache
+
+@JsonIgnore // JsonIgnoreProperties
+
+@Vaild
+
+버전관리 방법
+Versioning
+
