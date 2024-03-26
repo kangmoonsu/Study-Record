@@ -12,7 +12,7 @@
 + 따라서 리캡차는 우리가 인터넷을 자유롭게 이용할 수 있도록 도와주는 중요한 도구입니다.
 
 <div align="center">
-  <img src="./img/1.0.png">
+  <img src="img/1.0.png">
 </div>
 <br>
 
@@ -23,7 +23,7 @@
 + 위 사이트로 접속해서 v3 Admin Console 클릭한 다음에
 
 <div align="center">
-  <img src="./img/2.0.png">
+  <img src="img/2.0.png">
 </div>
 
 + 라벨에는 적용한 사이트를 구분하기 위한 제목같은 개념으로 적어주고
@@ -31,13 +31,13 @@
 + 하단 도메인은 적용할 페이지의 도메인 주소를 입력하면 된다.
 
 <div align="center">
-  <img src="./img/3.0.png">
+  <img src="img/3.0.png">
 </div>
 
 + 모두 선택하고 제출하게되면 사이트 키와 비밀 키가 주어지는 화면으로 이동하고 이제 프로젝트에서 설정해주면 된다.
 
 <div align="center">
-  <img src="./img/4.0.png">
+  <img src="img/4.0.png">
 </div>
 
 먼저 html에 reCaptcha를 적용하기 위해서는 하단 스크립트를 추가합니다.
@@ -129,7 +129,7 @@ window.onload = function () {
 ```
 
 <div align="center">
-  <img src="./img/5.0.png">
+  <img src="img/5.0.png">
 </div>
 
 + 이제는 스프링 부트에서 reCaptcha 구성을 설정하고 위 시나리오는 페이지에서 문의하기하면 이메일로 문의 내용이 수신됩니다.
