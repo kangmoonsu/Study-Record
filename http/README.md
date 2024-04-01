@@ -6,3 +6,7 @@
     PORT
     DNS
     
+
+### Section2: URI와 웹 브라우저 요청 흐름
+    URI
+    웹브라우저 요청 흐름
