@@ -16,3 +16,5 @@
     Stateful, Stateless(중요 ★)
     비연결성(conectionless)
     HTTP 메시지
+
+### Section4: HTTP 메서드
