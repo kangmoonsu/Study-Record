@@ -27,3 +27,5 @@
 ### Section 5: HTTP 메소드 활용
     클라이언트에서 서버로 데이터 전송
     HTTP API 설계 예시
+
+### Section 6: HTTP 상태코드
