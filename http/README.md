@@ -33,3 +33,5 @@
     3xx
     4xx
     5xx
+
+### Section 7: HTTP HEADER
