@@ -6,7 +6,7 @@ int main() {
     cout << "Enter floating point value: ";
     cin >> money;
     
-    // Convert dollars to cents.(double into int)
+    // Convert dollars to cents(double into int).
     int cents = money * 100;
 
     int ten_dollars = cents / 1000;
