@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+Write an application that prompts the user for a positive integer value and determines whether it is an even or odd number
+(consider zero an even number for this application). Continue prompting until the user quits by entering a negative integer value. 
+Print the number of even and odd integers entered after the user quits as shown below in a sample session.
+*/
 int main() {
 
     int num;
