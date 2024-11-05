@@ -3,23 +3,9 @@
 
 using namespace std;
 
-double triangleArea(double base, double height)
-{
-    double area = (base * height) / 2;
-    return area;
-}
-
-double rectangleArea(double width, double height)
-{
-    double area = width * height;
-    return area;
-}
-
-double circleArea(double radius)
-{
-    double area = M_PI * pow(radius, 2);
-    return area;
-}
+double triangleArea(double base, double height);
+double rectangleArea(double width, double height);
+double circleArea(double radius);
 
 int main()
 {
@@ -77,4 +63,22 @@ int main()
     }
 
     return 0;
+}
+
+double triangleArea(double base, double height)
+{
+    double area = (base * height) / 2;
+    return area;
+}
+
+double rectangleArea(double width, double height)
+{
+    double area = width * height;
+    return area;
+}
+
+double circleArea(double radius)
+{
+    double area = M_PI * pow(radius, 2);
+    return area;
 }
