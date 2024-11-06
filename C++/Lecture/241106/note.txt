@@ -1,0 +1,20 @@
+1. Primitive Types(passive)
+"Know"
+double x = 3.12;
+
+2. Class Types(active)
+"Knows"
+double width;
+double height;
+double depth;
+-- charactensitics state info
+"Does"
+hold();
+raise/lower();
+disassemble();
+fold()
+whiteDesk.fold();
+-- action behaviors
+
+
+cin cout < object

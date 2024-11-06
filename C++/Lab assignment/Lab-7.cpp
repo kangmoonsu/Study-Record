@@ -19,7 +19,9 @@ int main() {
     bool running = true; 
 
     while (running) {
+
         displayMenu();
+        
         cin >> choice;
 
         switch (choice) {
@@ -56,7 +58,6 @@ int main() {
                 displayValues(a, b, c, alpha, beta);
                 break;
             case 5:
-                cout << "Exiting program." << endl;
                 running = false;
                 break;
             default:
@@ -80,26 +81,26 @@ void displayMenu() {
 }
 
 void rightTriangle_case1(double a, double b, double &c, double &alpha, double &beta) {
-    c = sqrt(a * a + b * b);
+    c = sqrt(pow(a, 2)+ pow(b, 2));
     alpha = atan(a / b) * RADIANS_TO_DEGREES;
     beta = 90 - alpha;
 }
 
 void rightTriangle_case2(double a, double &b, double &c, double alpha, double &beta) {
     b = a / tan(alpha * DEGREES_TO_RADIANS);
-    c = sqrt(a * a + b * b);
+    c = sqrt(pow(a, 2)+ pow(b, 2));
     beta = 90 - alpha;
 }
 
 void rightTriangle_case3(double a, double &b, double c, double &alpha, double &beta) {
-    b = sqrt(c * c - a * a);
+    b = sqrt(pow(c, 2) - pow(a, 2));
     alpha = atan(a / b) * RADIANS_TO_DEGREES;
     beta = 90 - alpha;
 }
 
 void rightTriangle_case4(double &a, double &b, double c, double alpha, double &beta) {
-    a = c * cos(alpha * DEGREES_TO_RADIANS);
-    b = sqrt(c * c - a * a);
+    a = c * sin(alpha * DEGREES_TO_RADIANS);
+    b = sqrt(pow(c, 2) - pow(a, 2));
     beta = 90 - alpha;
 }
 
