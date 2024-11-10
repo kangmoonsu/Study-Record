@@ -17,7 +17,7 @@ void printSalary(Salary sal);
 int main() {
     ifstream inputFile("payroll.txt");
     if (!inputFile) {
-        cerr << "Error: Could not open the file!" << endl;
+        cout << "Error: Could not open the file!" << endl;
         exit(1);
     }
 
