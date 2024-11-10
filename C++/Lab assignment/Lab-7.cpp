@@ -16,6 +16,7 @@ void displayValues(double a, double b, double c, double alpha, double beta);
 int main() {
     int choice;
     double a, b, c, alpha, beta;
+
     bool running = true; 
 
     while (running) {
