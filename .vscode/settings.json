@@ -4,5 +4,6 @@
         "cmath": "cpp",
         "ostream": "cpp",
         "iomanip": "cpp"
-    }
+    },
+    "java.compile.nullAnalysis.mode": "automatic"
 }
