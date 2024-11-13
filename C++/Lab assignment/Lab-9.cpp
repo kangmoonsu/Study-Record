@@ -3,6 +3,20 @@
 #include <fstream>
 #include <iomanip>
 
+/*
+    use class 
+    private 에 변수 넣고
+    public 안에 함수 넣고
+
+    write definition after the class
+
+    assume loop 10 times
+
+    make a salary array
+
+
+*/
+
 using namespace std;
 
 struct Salary {
@@ -16,24 +30,7 @@ void computeNet(Salary &);
 void printSalary(Salary);
 
 int main() {
-    char fileName[20] = "payroll.txt";
-    ifstream inputFile;
-    inputFile.open(fileName);
-
-    if (inputFile.fail()) {
-        cout << "Error: Could not open the file!" << endl;
-        exit(1);
-    }
-
-    for (int i = 0; i < 10; i++) {
-		Salary sal;
-        inputFile >> sal.base >> sal.bonus >> sal.deduction;
-        computeNet(sal);
-        printSalary(sal);
-    }
-
-    inputFile.close();
-    return 0;
+    
 }
 
 void computeNet(Salary &sal) {
@@ -41,13 +38,6 @@ void computeNet(Salary &sal) {
     sal.net_salary = (sal.base + sal.bonus) - deduction;
 }
 
-// void printSalary(Salary sal) {
-//     cout << "Base, Bonus, Deduction, NetSalary: "
-//          << setw(7) << fixed << setprecision(0) << sal.base << "  "
-//          << setw(5) << sal.bonus << "  "
-//          << setw(3) << setprecision(2) << sal.deduction << "  "
-//          << setw(10) << sal.net_salary << endl;
-// }
 
 void printSalary(Salary sal){
     cout << "Base, Bonus, Deduction, NetSalary: ";
