@@ -47,7 +47,7 @@ int main()
 	// reserve a sequence for 20 characters to
 	// more than handle the actual number of
 	// characters in the name itself.
-	char fileName[20] = "data.txt";
+	char fileName[20] = "payroll.txt";
 	inFile.open( fileName );
 
 	// Using variables like this are useful when

@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "cmath": "cpp",
         "ostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "ios": "cpp"
     },
     "java.compile.nullAnalysis.mode": "automatic"
 }
