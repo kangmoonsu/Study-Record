@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 class Salary {
 private:
     double base;       
@@ -14,19 +13,23 @@ private:
 
 public:
     Salary();
-    Salary(double b, double bon, double ded);
+    Salary(double b, double bon, double ded, double net);
 
     void computeNet();      
     void printSalary(); 
 
     void setBase(double b);
+    double getBase();
     void setBonus(double bon);
+    double getBonus();
     void setDeduction(double ded);
+    double getDeduction();
+    void setNetSalary(double net);
+    double getNetSalary();
 };
 
 
 int main() {
-    
 
     const int ARRAY_SIZE = 10;
 
@@ -40,44 +43,36 @@ int main() {
         cout << "Error: Could not open the file!" << endl;
         exit(1);
     }
-
     
-    for (int i = 0; i < 10; i++) {       
+    for (int i = 0; i < ARRAY_SIZE; i++) {
         double base, bonus, deduction;
 
         inputFile >> base >> bonus >> deduction;
 
         sal[i].setBase(base);
         sal[i].setBonus(bonus);
-        sal[i].setDeduction(deduction);
-
-        sal[i].computeNet();
-    }
-
-    for (int i = 0; i < ARRAY_SIZE; i++) {
-        sal[i].printSalary();
+        sal[i].setDeduction(deduction);        
     }
 
     inputFile.close();
-    
+
+    for(int i = 0; i < ARRAY_SIZE; i++){
+        sal[i].computeNet();
+        sal[i].printSalary();
+    }
+
     return 0;
 }
 
+Salary::Salary(){};
 
-Salary::Salary(){
-    base = 0;
-    bonus = 0;
-    deduction = 0;
-    net_salary = 0;
-}
-
-Salary::Salary(double b, double bon, double ded){
+Salary::Salary(double b, double bon, double ded, double net){
     base = b;
     bonus = bon;
     deduction = ded;
-    net_salary = 0;
-}
-    
+    net_salary = net;
+};    
+
 void Salary::computeNet() {
     double total_deduction = (base + bonus) * deduction;
     net_salary = (base + bonus) - total_deduction;
@@ -100,10 +95,30 @@ void Salary::setBase(double b) {
     base = b;
 }
 
+double Salary::getBase(){
+    return base;
+}
+
 void Salary::setBonus(double bon) {
     bonus = bon;
 }
 
+double Salary::getBonus(){
+    return bonus;
+}
+
 void Salary::setDeduction(double ded) {
     deduction = ded;
+}
+
+double Salary::getDeduction(){
+    return deduction;
+}
+
+void Salary::setNetSalary(double net){
+    net_salary = net;
+}
+
+double Salary::getNetSalary(){
+    return net_salary;
 }
