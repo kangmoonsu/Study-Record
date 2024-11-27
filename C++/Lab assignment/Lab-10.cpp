@@ -32,10 +32,9 @@ public:
     void printTable();
     void setValueAt(int row, int col, int value);
     int getValueAt(int row, int col);
-    int (&getTable())[ROWS][COLS];
 };
 
-void findMatch(MultiplicationTable& mt, int valueToFind);
+void findMatch(MultiplicationTable mt, int valueToFind);
 
 int main() {
     MultiplicationTable mt;
@@ -69,8 +68,8 @@ void MultiplicationTable::setMinMax() {
 }
 
 void MultiplicationTable::printTable() {
-    cout << "Multiplication Table:\n";
-    cout << "  minimum value: " << minValue << "\n";
+    cout << "Multiplication Table: " << endl;
+    cout << "  minimum value: " << minValue << endl;
     cout << "  maximum value: " << maxValue << "\n\n";
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
@@ -84,7 +83,7 @@ void MultiplicationTable::setValueAt(int row, int col, int value) {
     if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
         table[row][col] = value;
     } else {
-        cout << "Index out of bounds.\n";
+        cout << "Index out of bounds." << endl;
     }
 }
 
@@ -92,29 +91,24 @@ int MultiplicationTable::getValueAt(int row, int col) {
     if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
         return table[row][col];
     } else {
-        cout << "Index out of bounds.\n";
+        cout << "Index out of bounds." << endl;
         return -1;
     }
 }
 
-int (&MultiplicationTable::getTable())[ROWS][COLS] {
-    return table;
-}
 
-void findMatch(MultiplicationTable& mt, int valueToFind) {
+void findMatch(MultiplicationTable mt, int valueToFind) {
     bool found = false;
-    int (&table)[ROWS][COLS] = mt.getTable();
 
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
-            if (table[i][j] == valueToFind) {
-                cout << valueToFind << " found in table at row, col: " << i << ", " << j << "\n";
+            if (mt.getValueAt(i, j) == valueToFind) {
+                cout << valueToFind << " found in table at row, col: " << i << ", " << j << endl;
                 found = true;
             }
         }
     }
-
     if (!found) {
-        cout << valueToFind << " not found in table\n";
+        cout << valueToFind << " not found in table" << endl;
     }
 }
