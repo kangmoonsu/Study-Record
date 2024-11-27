@@ -16,7 +16,6 @@ int max[4][4]
 #include <iostream>
 using namespace std;
 
-// 전역 상수 선언
 const int ROWS = 5;
 const int COLS = 5;
 
