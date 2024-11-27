@@ -1,43 +1,121 @@
-// array is static;
-// On average, a linear search will look through half the numberof elements in the list before a match is found.
-
 /*
 
 5 5 multi array is static
 int array[5][5];
 
-[][여기는 선언 꼭 해야함]
-먼저 0을 집어넣어서 initialze
-
-값을 compute하라고?
 
 use classes / design class
 do not missaround with public and private
 
-out of bound 면 바로 바로 no
-
-1  2  3  4   5
-2  4  6  8  10
-3  6  9 12  15
-4  8 12 16  20
-5 10 15 20 25
+if:out of bound -> no
 
 int min[0][0]
 int max[4][4]
 */
 
 #include <iostream>
-
-class Table{
-    private:
-        int arr[5][5];
-        int max_value;
-        int min_value;
-};
-
 using namespace std;
 
+// 전역 상수 선언
+const int ROWS = 5;
+const int COLS = 5;
+
+class MultiplicationTable {
+private:
+    int table[ROWS][COLS];
+    int minValue;
+    int maxValue;
+
+public:
+    MultiplicationTable();
+    void fillTable();
+    void setMinMax();
+    void printTable();
+    void setValueAt(int row, int col, int value);
+    int getValueAt(int row, int col);
+    int (&getTable())[ROWS][COLS];
+};
+
+void findMatch(MultiplicationTable& mt, int valueToFind);
+
 int main() {
+    MultiplicationTable mt;
+    mt.printTable();
+
+    int userValue;
+    cout << "Enter a value in the multiplication table: ";
+    cin >> userValue;
+
+    findMatch(mt, userValue);
 
     return 0;
+}
+
+MultiplicationTable::MultiplicationTable() {
+    fillTable();
+    setMinMax();
+}
+
+void MultiplicationTable::fillTable() {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            table[i][j] = (i + 1) * (j + 1);
+        }
+    }
+}
+
+void MultiplicationTable::setMinMax() {
+    minValue = table[0][0];
+    maxValue = table[ROWS - 1][COLS - 1];
+}
+
+void MultiplicationTable::printTable() {
+    cout << "Multiplication Table:\n";
+    cout << "  minimum value: " << minValue << "\n";
+    cout << "  maximum value: " << maxValue << "\n\n";
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            cout << table[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+void MultiplicationTable::setValueAt(int row, int col, int value) {
+    if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
+        table[row][col] = value;
+    } else {
+        cout << "Index out of bounds.\n";
+    }
+}
+
+int MultiplicationTable::getValueAt(int row, int col) {
+    if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
+        return table[row][col];
+    } else {
+        cout << "Index out of bounds.\n";
+        return -1;
+    }
+}
+
+int (&MultiplicationTable::getTable())[ROWS][COLS] {
+    return table;
+}
+
+void findMatch(MultiplicationTable& mt, int valueToFind) {
+    bool found = false;
+    int (&table)[ROWS][COLS] = mt.getTable();
+
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            if (table[i][j] == valueToFind) {
+                cout << valueToFind << " found in table at row, col: " << i << ", " << j << "\n";
+                found = true;
+            }
+        }
+    }
+
+    if (!found) {
+        cout << valueToFind << " not found in table\n";
+    }
 }
