@@ -5,7 +5,8 @@
         "ostream": "cpp",
         "iomanip": "cpp",
         "ios": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "vector": "cpp"
     },
     "java.compile.nullAnalysis.mode": "automatic",
     "C_Cpp.errorSquiggles": "disabled"

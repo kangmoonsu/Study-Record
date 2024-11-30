@@ -40,11 +40,11 @@ int main() {
     MultiplicationTable mt;
     mt.printTable();
 
-    int userValue;
+    int valueToFind;
     cout << "Enter a value in the multiplication table: ";
-    cin >> userValue;
+    cin >> valueToFind;
 
-    findMatch(mt, userValue);
+    findMatch(mt, valueToFind);
 
     return 0;
 }
