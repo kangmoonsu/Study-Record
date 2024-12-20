@@ -1,5 +1,6 @@
 package hello.core.springbasic.order;
 
+import hello.core.springbasic.annotation.MainDiscountPolicy;
 import hello.core.springbasic.discount.DiscountPolicy;
 import hello.core.springbasic.member.Member;
 import hello.core.springbasic.member.MemberRepository;
@@ -9,11 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService {
 
-    private final DiscountPolicy discountPolicy;
     private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
