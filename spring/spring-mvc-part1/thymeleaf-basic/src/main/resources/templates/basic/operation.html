@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>Arithmetic Operations
+        <ul>
+            <li>10 + 2 = <span th:text="10 + 2"></span></li>
+            <li>10 % 2 == 0 = <span th:text="10 % 2 == 0"></span></li>
+        </ul>
+    </li>
+    <li>Comparison Operations
+        <ul>
+            <li>1 > 10 = <span th:text="1 &gt; 10"></span></li>
+            <li>1 gt 10 = <span th:text="1 gt 10"></span></li>
+            <li>1 >= 10 = <span th:text="1 >= 10"></span></li>
+            <li>1 ge 10 = <span th:text="1 ge 10"></span></li>
+            <li>1 == 10 = <span th:text="1 == 10"></span></li>
+            <li>1 != 10 = <span th:text="1 != 10"></span></li>
+        </ul>
+    </li>
+    <li>Conditional Expression
+        <ul>
+            <li>(10 % 2 == 0)? 'Even':'Odd' =
+                <span th:text="(10 % 2 == 0)? 'even':'odd'"></span>
+            </li>
+        </ul>
+    </li>
+    <li>Elvis Operator
+        <ul>
+            <li>${data}?: 'No data available.' =
+                <span th:text="${data}?: 'No data'"></span>
+            </li>
+            <li>${nullData}?: 'No data available.' =
+                <span th:text="${nullData}?: 'No data'"></span>
+            </li>
+        </ul>
+    </li>
+    <li>No-Operation
+        <ul>
+            <li>${data}?: _ =
+                <span th:text="${data}?: _">No data available.</span>
+            </li>
+            <li>${nullData}?: _ =
+                <span th:text="${nullData}?: _">No data available.</span>
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

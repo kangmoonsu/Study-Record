@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Example</h1>
+<span th:text="${data}">html data</span>
+<h1>1. Standard HTML Comment</h1>
+<!--
+<span th:text="${data}">html data</span>
+-->
+<h1>2. Thymeleaf Parser Comment</h1>
+<!--/* [[${data}]] */-->
+<!--/*-->
+<span th:text="${data}">html data</span>
+<!--*/-->
+<h1>3. Thymeleaf Prototype Comment</h1>
+<!--/*/
+<span th:text="${data}">html data</span>
+/*/-->
+</body>
+</html>
